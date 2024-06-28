@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="7dp">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/from"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/kwd"
+                android:layout_marginTop="15dp"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="7dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/to"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="15sp" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner_target"
+                android:layout_width="150dp"
+                android:layout_height="55dp"
+                android:background="@drawable/spinner_bg"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/input_amount"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:hint="@string/enter_amount"
+        android:textColor="@color/black"
+        android:inputType="numberDecimal"
+        android:maxLength="15"
+        android:padding="7dp"
+        android:imeOptions="actionDone"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/convert_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/input_amount"
+        android:layout_margin="10dp"
+        android:text="@string/convert"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/converted_value"
+        android:layout_below="@+id/convert_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text=""
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="20sp"
+        />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+
+</RelativeLayout>
